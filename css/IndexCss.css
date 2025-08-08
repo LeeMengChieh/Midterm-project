@@ -10,6 +10,7 @@
 
 
 body {
+    min-height: 100vh;
     background: linear-gradient(to bottom, #68e6f9, #51dcff, #74cbff, #b3b4ff, #ee96ff);
     background-repeat: no-repeat;
     background-size: cover;
@@ -67,7 +68,7 @@ body {
 }
 
 #Banner {
-    padding: 0 5%;
+    padding: 5%;
 }
 
 #Banner img {
@@ -76,12 +77,51 @@ body {
     display: block;
 }
 
+#Search {}
+
+#Search .nav-tabs {
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 20px 20px 0px 0px;
+
+}
+
+#Search .container {
+    width: 90%;
+}
+
+#Search .container ul {
+    background-color: #ffffff;
+}
+
+#Search .nav-tabs .nav-item {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#Search .nav-tabs .nav-link {
+    width: 100%;
+    border-radius: 0;
+}
+
+#myTabContent {
+    background-color: #ffffff;
+}
+
 @media screen and (min-width: 767px) {
     .menu-icon {
         display: none;
     }
 
+    .header {
+        width: 100%;
+    }
+
     .navbar {
+        max-width: 1140px;
+        margin: 0 auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -107,7 +147,7 @@ body {
     }
 
     #Banner {
-        padding: 0 20%;
+        padding: 5% 30%;
     }
 
 }
