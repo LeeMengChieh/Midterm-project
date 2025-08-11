@@ -1,3 +1,22 @@
+/* 手機版語言選項樣式 */
+.nav-menu li.language>a {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-bottom: 1px solid white;
+    padding: 8px 0;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.nav-menu li.language>a img {
+    width: 24px;
+    height: 24px;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
@@ -39,9 +58,7 @@ body {
     position: relative;
     width: 92px;
     height: 60px;
-    z-index: 1200;
 }
-
 
 .logo img {
     width: 100%;
@@ -67,102 +84,15 @@ body {
 }
 
 /* =================================語言列&MENU=========================================== */
-.dropdown-menu.show {
-    background-color: #333;
-    width: 100%;
-    margin-top: 1px;
-    padding: 0px;
-    border: none;
-}
-
 .language>img {
     margin: 8px;
     width: 24px;
     height: 24px;
 }
 
-.dropdown-item {
-    padding: 0px;
-}
-
 .menu-toggle {
     display: none;
 }
-
-.menu-icon.open-icon {
-    display: flex;
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 1200;
-    cursor: pointer;
-    font-size: 48px;
-    color: #EE96FF;
-    user-select: none;
-}
-
-.menu-icon.close-icon {
-    display: none;
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    z-index: 1200;
-    cursor: pointer;
-    font-size: 48px;
-    color: #EE96FF;
-    user-select: none;
-}
-
-.menu-toggle:not(:checked)~.open-icon {
-    display: flex;
-}
-
-.menu-toggle:not(:checked)~.close-icon {
-    display: none;
-}
-
-.menu-toggle:checked~.open-icon {
-    display: none;
-}
-
-.menu-toggle:checked~.close-icon {
-    display: flex;
-}
-
-
-.menu-toggle:checked~.nav-menu {
-    display: flex;
-    position: fixed;
-    top: 20px;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #333;
-    flex-direction: column;
-    padding: 60px 20px 20px;
-    overflow-y: auto;
-    z-index: 1100;
-}
-
-.nav-menu {
-    display: none;
-}
-
-.nav-menu li {
-    padding: 8px;
-    border-bottom: 1px solid #fff;
-    text-align: center;
-}
-
-.nav-menu li a {
-    color: #fff;
-    font-family: "Noto Sans";
-    font-size: 16px;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-}
-
 
 .menu-icon {
     display: flex;
@@ -181,6 +111,63 @@ body {
     color: #EE96FF;
 }
 
+.nav-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255 255 255 / 0.95);
+    padding: 60px 20px 20px;
+    flex-direction: column;
+    overflow-y: auto;
+    z-index: 1001;
+}
+
+.menu-toggle:checked~.nav-menu {
+    display: flex;
+}
+
+.nav-menu {
+    list-style: none;
+    text-align: center;
+    background: #333 !important;
+    color: #fff;
+}
+
+.nav-menu li {
+    padding: 8px;
+    border-bottom: 1px solid white;
+}
+
+.nav-menu li a {
+    color: #ffffff;
+    font-family: "Noto Sans";
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255 255 255 / 0.5);
+    z-index: 1000;
+    display: none;
+    cursor: pointer;
+}
+
+
+.menu-toggle:checked~.menu-overlay {
+    display: block;
+}
 
 #Banner {
     padding: 5%;
@@ -225,7 +212,51 @@ body {
     background-color: #ffffff;
 }
 
+
+/* 電腦版語言下拉選單 */
+
+.desktop-language-dropdown {
+    display: none;
+    /* 手機不顯示 */
+    position: relative;
+}
+
 @media screen and (min-width: 767px) {
+
+    /* 電腦版顯示語言dropdown */
+    .desktop-language-dropdown {
+        display: block;
+    }
+
+    /* 隱藏手機版漢堡內語言項目 */
+    .nav-menu li.language {
+        display: none !important;
+    }
+
+    /* dropdown背景色改成 #333，文字白色 */
+    .dropdown-menu {
+        background-color: #333;
+        min-width: 150px;
+    }
+
+    .dropdown-item {
+        color: white;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+        background-color: #555;
+        color: white;
+    }
+
+    .dropdown-item img {
+        width: 24px;
+        height: 24px;
+    }
+
     .menu-icon {
         display: none;
     }
@@ -243,7 +274,6 @@ body {
         width: 100%;
     }
 
-
     .navbar>ul {
         list-style: none;
         display: flex;
@@ -254,42 +284,12 @@ body {
     }
 
     .navbar>ul>li>a {
-        position: relative;
-        padding-left: 38px;
         display: block;
         text-decoration: none;
         font-family: "Noto Sans";
         font-size: 16px;
         color: #ffffff;
         transition: color 0.6s ease-in-out;
-    }
-
-    .nav-menu li:not(.dropdown) a::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 30px;
-        height: 30px;
-        background-image: url('../img/microphone-pink.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-    }
-
-    .nav-menu li:not(.dropdown) a:not(.dropdown-item):hover::before {
-        opacity: 1;
-    }
-
-    .nav-menu li:not(.dropdown) a:not(.dropdown-item):hover .text {
-        border-bottom: 1px solid #EE96FF;
-        color: #EE96FF;
-    }
-
-    .dropdown-menu.show {
-        background-color: #fff;
     }
 
 
@@ -303,13 +303,9 @@ body {
         display: none;
     }
 
-    .nav-item.dropdown {
-        position: relative;
-    }
-
     .nav-menu {
         display: flex !important;
-        position: relative;
+        position: static;
         flex-direction: row;
         height: auto;
         background: transparent;
@@ -319,6 +315,7 @@ body {
     .nav-menu li {
         padding: 0;
         border: none;
+        margin-left: 48px;
     }
 
     .nav-menu li a {
@@ -333,4 +330,5 @@ body {
     #Banner {
         padding: 5% 30%;
     }
+
 }

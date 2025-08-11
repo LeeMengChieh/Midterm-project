@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/test.css">
+</head>
+
+<body>
+
+    <!-- header 部分 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html"><img src="./img/logo.svg" alt="logo" /></a></div>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </label>
+
+            <!-- 漢堡選單（手機） -->
+            <ul class="nav-menu">
+                <li><a href="">收費方式</a></li>
+                <li><a href="">預約查詢</a></li>
+                <li><a href="">會員登入</a></li>
+                <li><a href="">聯絡我們</a></li>
+
+                <!-- 手機版語言選項，平列li -->
+                <li><a href="#" class="language"><img src="./img/circle (1).png" alt="繁體中文" /> 繁體中文</a></li>
+                <li><a href="#" class="language"><img src="./img/japan.png" alt="日本語" /> 日本語</a></li>
+                <li><a href="#" class="language"><img src="./img/south-korea.png" alt="한국어" /> 한국어</a></li>
+            </ul>
+
+            <!-- 電腦版語言下拉選單（使用Bootstrap dropdown） -->
+            <div class="dropdown desktop-language-dropdown">
+                <a href="#" class="nav-link dropdown-toggle" role="button" id="languageDropdown"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M22 12C22 17.5228 17.5228 22 12 22M22 12C22 6.47715 17.5228 2 12 2M22 12H2M12 22C6.47715 22 2 17.5228 2 12M12 22C14.5013 19.2616 15.9228 15.708 16 12C15.9228 8.29203 14.5013 4.73835 12 2M12 22C9.49872 19.2616 8.07725 15.708 8 12C8.07725 8.29203 9.49872 4.73835 12 2M2 12C2 6.47715 6.47715 2 12 2"
+                            stroke="#EE96FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="languageDropdown">
+                    <li>
+                        <a class="dropdown-item" href="#"><img src="./img/circle (1).png" alt="" /> 繁體中文</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#"><img src="./img/japan.png" alt="" /> 日本語</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#"><img src="./img/south-korea.png" alt="" /> 한국어</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
