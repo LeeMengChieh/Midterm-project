@@ -257,21 +257,6 @@ body {
     margin-top: -6px;
 }
 
-#Search input[type="date"] {
-    width: 100%;
-    border: 1px solid #e3c6d6;
-    border-radius: 10px;
-    padding: 12px 15px;
-    font-size: 20px;
-    color: #EE96FF;
-    font-weight: 600;
-    outline: none;
-}
-
-#Search input[type="date"]::-webkit-calendar-picker-indicator {
-    filter: invert(33%) sepia(73%) saturate(398%) hue-rotate(287deg) brightness(95%) contrast(90%);
-}
-
 #myTabContent {
     background-color: #ffffff;
 }
@@ -468,23 +453,25 @@ body {
     }
 
     #Search .nav-link {
-        font-size: 36px;
+        font-size: 24px;
     }
 
     .custom-dropdown-btn {
         font-size: 30px;
     }
 
-    #Search .tab-pane.active.show .content>* {
-        width: auto !important;
+    #Search .tab-pane.active.show.content {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 24px;
+    }
+
+    #Search .tab-pane.active.show.content>* {
+        width: auto;
         flex: 0 1 auto;
     }
 
-    #Search .tab-pane.active.show .content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
-        gap: 16px;
-    }
 }
