@@ -223,7 +223,7 @@ body {
 #Search .nav-tabs {
     display: flex;
     background: #fddde7;
-    border-radius: 20px 20px 0 0;
+    /* border-radius: 20px 20px 0 0; */
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -252,7 +252,7 @@ body {
 
 #Search .tab-content {
     background: white;
-    border-radius: 0 0 20px 20px;
+    /* border-radius: 0 0 20px 20px; */
     padding: 24px 20px;
     margin-top: -6px;
 }

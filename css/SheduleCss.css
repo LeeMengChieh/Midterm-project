@@ -207,7 +207,6 @@ body {
 
 #Search .nav-tabs {
     display: flex;
-    border-radius: 20px 20px 0 0;
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -232,8 +231,9 @@ body {
 }
 
 .custom-dropdown-btn {
+    border-bottom: 2px solid #EE96FF;
+    padding-bottom: 4px;
     background: none !important;
-    border: none !important;
     box-shadow: none !important;
     color: #EE96FF;
     font-size: 20px;
@@ -242,12 +242,24 @@ body {
 
 #Search .nav-link.active {
     color: #EE96FF;
+    position: relative;
+}
 
+#Search .nav-link.active::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 0px;
+    transform: translateX(-50%);
+    width: calc(100% - 80px);
+    height: 2px;
+    background: #EE96FF;
+    border-radius: 1px;
 }
 
 #Search .tab-content {
     background: white;
-    border-radius: 0 0 20px 20px;
     padding: 24px 20px;
     margin-top: -6px;
 }
@@ -284,8 +296,19 @@ body {
     font-family: "Montserrat";
 }
 
-#Search p {
-    margin: 16px 8px;
+.dropdown {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 16px;
+
+}
+
+.dropdown .left,
+.dropdown .right {
+    color: #EE96FF;
+    display: flex;
+    align-items: center;
 }
 
 .custom-dropdown-btn:hover,
@@ -302,87 +325,138 @@ body {
 }
 
 .custom-dropdown-btn {
+    margin: 0 12px;
     color: #EE96FF;
     font-size: 20px;
     border-bottom: 1px solid #EE96FF;
     background: none;
 }
 
+#Search .dropdown-menu {
+    background-color: #fff;
+}
+
+.dropdown .text {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+    width: max-content;
+    margin-top: 4px;
+    text-align: center;
+    font-size: 16px;
+    color: #962222;
+    order: 2;
+    white-space: nowrap;
+    z-index: 1;
+}
 
 /* =================================時間線列表=========================================== */
 .schedule-container {
-    border: 1px solid #ccc;
-    background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    max-width: 1200px;
+    position: relative;
+    display: flex;
+    font-family: "Montserrat";
+    width: 95%;
     margin: auto;
 }
 
-.time-header {
-    display: grid;
-    grid-template-columns: 160px repeat(24, 1fr);
-    background: #f0f0f0;
+.sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 140px;
+    border-right: 1px solid #ccc;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.right-area {
+    margin-left: 140px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.scroll-wrapper {
+    overflow-x: auto;
+    overflow-y: hidden;
+    flex: 1;
+    min-width: 0;
+}
+
+.room {
+    font-family: "noto sans";
+    background-color: #fff;
+    padding: 16px 10px;
+    white-space: nowrap;
+    padding: 12px;
+    line-height: 1.4;
     font-weight: bold;
+    text-align: left;
+}
+
+.room p {
+    font-family: "montserrat";
+    font-weight: normal;
+}
+
+.sidebar .room:nth-child(1) {
+    height: 38px;
+}
+
+.right-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.time-axis {
+    display: flex;
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    background: #ffffff;
+    min-width: 1920px;
+}
+
+.time-slot {
+    min-width: 80px;
+    flex: 1;
+    padding: 8px 0;
     text-align: center;
-    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    font-size: 14px;
+    user-select: none;
 }
 
-.time-header div {
-    padding: 6px 0;
-    border-right: 1px solid #ddd;
+.time-slot:first-child {
+    border-left: none;
 }
 
-.room-row {
+.schedule-grid-wrapper {
+    flex: 1;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.schedule-grid {
+    flex: 1;
     display: grid;
-    grid-template-columns: 160px 1fr;
+    grid-template-columns: repeat(24, 80px);
+    grid-auto-rows: 110px;
+    min-width: 1920px;
+}
+
+.cell {
+    border-left: 1px solid #eee;
     border-bottom: 1px solid #eee;
 }
 
-.room-name {
-    background: #f9f9f9;
-    padding: 8px;
-    border-right: 1px solid #ddd;
-    font-weight: bold;
-    text-align: right;
-}
-
-.room-timeline {
-    display: grid;
-    grid-template-columns: repeat(24, 1fr);
-    position: relative;
-    border-left: 1px solid #eee;
-}
-
-.booking {
-    background: #9cf;
-    color: #333;
-    font-size: 12px;
-    border-radius: 4px;
-    padding: 4px 6px;
-    box-sizing: border-box;
-    white-space: normal;
-    /* 支援多行文字 */
-    min-height: 48px;
-    /* 避免被裁切 */
-    line-height: 1.4;
-    border: 1px solid #ccc;
-}
-
-.booking.pink {
-    background: #fbb;
-}
-
-.booking.green {
-    background: #bfb;
-}
-
-.room-timeline {
-    background-image: repeating-linear-gradient(to right,
-            transparent,
-            transparent calc(100% / 24 - 1px),
-            #ddd calc(100% / 24 - 1px),
-            #ddd calc(100% / 24));
+.booked {
+    background-color: #4caf50;
+    opacity: 0.7;
 }
 
 @media screen and (min-width: 767px) {
@@ -501,4 +575,8 @@ body {
         display: none !important;
     }
 
+    .schedule-container {
+        max-width: 1200px;
+        overflow-x: hidden;
+    }
 }
