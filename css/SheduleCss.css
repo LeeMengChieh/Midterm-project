@@ -543,33 +543,35 @@ body {
 }
 
 .back {
+    display: block;
     margin: auto;
-    display: flex;
-    padding: 12px;
-    align-items: center;
+    padding: 12px 32px;
     border-radius: 16px;
     border: 1px solid #EE96FF;
     background: #FFF;
     color: #EE96FF;
-}
-
-.back p {
-    margin: 0px;
-    display: flex;
-    padding: 0 32px;
-    justify-content: center;
-    align-items: center;
     font-family: "Noto Sans";
     font-size: 20px;
-    font-style: normal;
     font-weight: 300;
     line-height: 24px;
+    text-decoration: none;
+}
+
+.Back {
+    max-width: 200px;
+    /* 容器最大寬度 */
+    margin: 20px auto;
+    /* 上下20px，左右自動置中 */
+    padding: 0 16px;
+    /* 左右內距16px，避免貼邊 */
+    text-align: center;
+    /* 按鈕置中 */
 }
 
 .back:hover {
     background: #EE96FF;
     color: #fff;
-
+    text-decoration: none;
 }
 
 @media screen and (min-width: 767px) {
@@ -688,8 +690,16 @@ body {
         display: none !important;
     }
 
+    #shedule {
+        margin: 20px auto;
+        padding: 20px;
+        width: 60%;
+        border-radius: 28px;
+        background-color: #fff;
+    }
+
     .schedule-container {
-        max-width: 1200px;
+        background-color: #fff;
         overflow-x: hidden;
     }
 }
