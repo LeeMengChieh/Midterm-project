@@ -358,14 +358,15 @@ body {
     font-family: "Montserrat";
     width: 95%;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .sidebar {
+    gap: 8px;
     position: absolute;
     top: 0;
     left: 0;
     width: 140px;
-    border-right: 1px solid #ccc;
     background: #ffffff;
     display: flex;
     flex-direction: column;
@@ -387,6 +388,7 @@ body {
 }
 
 .room {
+    height: 94px;
     font-family: "noto sans";
     background-color: #fff;
     padding: 16px 10px;
@@ -418,17 +420,18 @@ body {
     display: flex;
     border-bottom: 1px solid #ccc;
     background: #ffffff;
-    min-width: 1920px;
+    min-width: 1080px;
 }
 
 .time-slot {
-    min-width: 80px;
+    min-width: 45px;
     flex: 1;
     padding: 8px 0;
     text-align: center;
     border-left: 1px solid #ddd;
     font-size: 14px;
     user-select: none;
+    background-color: #fff;
 }
 
 .time-slot:first-child {
@@ -442,21 +445,131 @@ body {
 }
 
 .schedule-grid {
+    margin-top: 8px;
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(24, 80px);
-    grid-auto-rows: 110px;
-    min-width: 1920px;
+    row-gap: 8px;
+    grid-template-columns: repeat(24, 45px);
+    grid-auto-rows: 94px;
+    min-width: 1080px;
 }
 
 .cell {
-    border-left: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px dashed #9AF2E6;
+    border-top: 1px dashed #9AF2E6;
 }
 
-.booked {
-    background-color: #4caf50;
-    opacity: 0.7;
+.cell-unbook {
+    border-bottom: 1px dashed #9AF2E6;
+    border-top: 1px dashed #9AF2E6;
+}
+
+.booked-privacy {
+    position: relative;
+    border-bottom: 1px dashed #F6808F;
+    border-top: 1px dashed #F6808F;
+    background-color: #FED7DC;
+}
+
+.booked-public {
+    position: relative;
+    border-bottom: 1px dashed #5BBEB1;
+    border-top: 1px dashed #5BBEB1;
+    background-color: #9AF2E6;
+}
+
+.cell-unbook:hover {
+    background-color: #9AF2E6 !important;
+    opacity: 0.5;
+}
+
+.booked-public p,
+.booked-privacy p {
+    position: absolute;
+    left: 4px;
+    white-space: nowrap;
+    overflow: visible;
+    z-index: 1000;
+    grid-column: span 2;
+}
+
+
+.title {
+    font-family: "Montserrat";
+    font-weight: bold;
+    color: #333;
+    font-size: 16px;
+}
+
+.name {
+    top: 20px;
+    font-family: "Noto Sans";
+    font-weight: normal;
+    color: #333;
+    font-size: 14px;
+}
+
+.public {
+    display: flex;
+    align-items: center;
+    bottom: 4px;
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #28685f;
+    font-size: 14px;
+    text-align: center;
+}
+
+.privacy {
+    display: flex;
+    align-items: center;
+    bottom: 4px;
+    font-family: "Montserrat";
+    font-weight: normal;
+    color: #BA4655;
+    font-size: 14px;
+    text-align: center;
+}
+
+.join {
+    font-family: "Noto Sans";
+    bottom: 2px;
+    padding: 4px 8px;
+    background-color: #5BBEB1;
+    color: #fff;
+    border: none;
+    border-radius: 0px;
+    cursor: pointer;
+}
+
+.back {
+    margin: auto;
+    display: flex;
+    padding: 12px;
+    align-items: center;
+    border-radius: 16px;
+    border: 1px solid #EE96FF;
+    background: #FFF;
+    color: #EE96FF;
+}
+
+.back p {
+    margin: 0px;
+    display: flex;
+    padding: 0 32px;
+    justify-content: center;
+    align-items: center;
+    font-family: "Noto Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.back:hover {
+    background: #EE96FF;
+    color: #fff;
+
 }
 
 @media screen and (min-width: 767px) {
