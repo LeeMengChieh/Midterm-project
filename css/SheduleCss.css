@@ -7,8 +7,6 @@
     --layout-container-fluid-x-padding: 24px;
 }
 
-
-
 body {
     min-height: 100vh;
     background-color: #fff;
@@ -296,6 +294,25 @@ body {
     font-family: "Montserrat";
 }
 
+
+input[type="date"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    color: #EE96FF;
+    font-family: "Montserrat";
+    font-size: 20px;
+    background-color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #EE96FF;
+    padding: 8px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(77%) sepia(17%) saturate(6532%) hue-rotate(237deg) brightness(103%) contrast(101%);
+    cursor: pointer;
+}
+
 .dropdown {
     display: flex;
     align-items: center;
@@ -559,13 +576,9 @@ body {
 
 .Back {
     max-width: 200px;
-    /* 容器最大寬度 */
     margin: 20px auto;
-    /* 上下20px，左右自動置中 */
     padding: 0 16px;
-    /* 左右內距16px，避免貼邊 */
     text-align: center;
-    /* 按鈕置中 */
 }
 
 .back:hover {
