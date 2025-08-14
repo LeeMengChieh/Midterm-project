@@ -276,17 +276,23 @@ label {
     color: #333;
 }
 
+label {
+    font-family: "noto sans";
+    color: #333;
+}
+
 input,
 select {
+    color: #666;
+    font-family: "noto sans";
     width: 100%;
     padding: 8px;
     border: none;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #EE96FF;
     font-size: 16px;
     outline: none;
 }
 
-/* 加減按鈕 */
 .number-input {
     display: flex;
     align-items: center;
@@ -294,34 +300,103 @@ select {
 }
 
 .number-input button {
-    background: #fdd9e5;
+    background-color: #fff;
     border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 18px;
+    font-size: 24px;
     cursor: pointer;
     color: #EE96FF;
+}
+
+.date-text {
+    font-family: "Montserrat";
+
 }
 
 .number-input input {
     width: 40px;
     text-align: center;
     border: none;
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid #EE96FF;
 }
 
-/* 底部按鈕 */
-.btn-group {
+input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(77%) sepia(17%) saturate(6532%) hue-rotate(237deg) brightness(103%) contrast(101%);
+    cursor: pointer;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    filter: invert(77%) sepia(17%) saturate(6532%) hue-rotate(237deg) brightness(103%) contrast(101%);
+    cursor: pointer;
+}
+
+#Form textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #EE96FF;
+    border-radius: 8px;
+    resize: none;
+    box-sizing: border-box;
+}
+
+#Form textarea:focus {
+    border-color: #EE96FF;
+    outline: none;
+}
+
+.money {
+    margin-top: 12px;
+}
+
+#Form .radio-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin: 10px 0;
+}
+
+#Form .radio-group input[type="radio"] {
+    accent-color: #EE96FF;
+    transform: scale(1.2);
+}
+
+#Form .radio-group label {
+    white-space: nowrap;
+    font-size: 14px;
+    font-family: "noto sans";
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#Form .radio-group input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 1px solid #EE96FF;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+
+#Form .radio-group input[type="radio"]:checked {
+    background-color: #EE96FF;
+    border-color: #EE96FF;
+}
+
+.group {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+    gap: 8px;
 }
 
 .btn {
     flex: 1;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
@@ -331,13 +406,38 @@ select {
     background: #fff;
     color: #EE96FF;
     border: 1px solid #EE96FF;
-    margin-right: 8px;
 }
 
 .btn-confirm {
     background: #EE96FF;
     color: #fff;
-    margin-left: 8px;
+}
+
+.btn-back:hover {
+    background: #EE96FF;
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-confirm:hover {
+    background: #ffffff;
+    color: #EE96FF;
+    border: 1px solid #EE96FF;
+}
+
+#Form .group .btn.btn-confirm:active,
+#Form .group .btn.btn-confirm:focus:active {
+    background: #ffffff;
+    color: #EE96FF;
+    border: 1px solid #EE96FF;
+    transform: scale(0.95);
+}
+
+#Form .group .btn.btn-back:active,
+#Form .group .btn.btn-back:focus:active {
+    background: #EE96FF;
+    color: #fff;
+    text-decoration: none;
 }
 
 @media screen and (min-width: 767px) {
@@ -454,4 +554,38 @@ select {
     .menu-overlay {
         display: none !important;
     }
+
+    #Form {
+        width: 40%;
+        margin: auto;
+    }
+
+    #Form .container {
+        margin-bottom: 20px;
+    }
+
+    #Form .container .position {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    #Form input,
+    #Form select,
+    #Form textarea {
+        width: 100%;
+        box-sizing: border-box;
+        /* 包含 padding */
+    }
+
+    .group {
+        width: 100%;
+        margin: auto;
+    }
+
+    .money {
+        margin-bottom: 20px;
+    }
+
 }

@@ -64,7 +64,7 @@
                         type="button" role="tab">眾樂樂</button>
                 </li>
             </ul>
-            <div class="tab-content my-tab-content" id="myTabContent">
+            <div class="tab-content my-tab-content position" id="myTabContent ">
                 <div class="tab-pane fade show active content" id="home" role="tabpanel">
                     <label>團名</label>
                     <input type="text" placeholder="輸入團名">
@@ -83,7 +83,7 @@
                     </div>
 
                     <label>機種</label>
-                    <div>D包廂：DAM XG7000R</div>
+                    <div class="room-name">D包廂：DAM XG7000R</div>
 
                     <label>團員</label>
                     <div>顯示會員編號與暱稱</div>
@@ -95,23 +95,68 @@
                         <button>+</button>
                     </div>
 
-                    <div style="margin-top: 12px;">目前平均每人約 <strong>900</strong> 元</div>
+                    <div class="money">目前平均每人約 <strong>900</strong> 元</div>
 
-                    <div class="btn-group">
-                        <button class="btn btn-back">返回</button>
+                    <div class="group">
+                        <a href="./shedule.html" class="btn btn-back">返回</a>
+                        <button class="btn btn-confirm">確認</button>
+                    </div>
+                </div>
+                <div class="tab-pane fade content" id="profile" role="tabpanel">
+                    <label>團名</label>
+                    <input type="text" placeholder="輸入團名">
+
+                    <label for="notes">團長的話</label>
+                    <textarea id="notes" name="notes" placeholder="請輸入內容..."></textarea>
+
+                    <label>日期</label>
+                    <p class="date-text">2025/08/01</p>
+
+                    <label>時間</label>
+                    <input type="time">
+
+                    <label>時數</label>
+                    <div class="number-input">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+
+                    <label>機種</label>
+                    <div class="room-name">D包廂：DAM XG7000R</div>
+
+                    <label>團員</label>
+                    <div>顯示會員編號與暱稱</div>
+
+                    <label>預計人數</label>
+                    <div class="number-input">
+                        <button>-</button>
+                        <input type="number" value="1" min="1">
+                        <button>+</button>
+                    </div>
+
+                    <div class="money">目前平均每人約 <strong>900</strong> 元</div>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="payment" value="private">
+                            私人揪團
+                        </label>
+                        <label>
+                            <input type="radio" name="payment" value="public">
+                            公開揪團
+                        </label>
+                    </div>
+                    <div class="group">
+                        <a href="./shedule.html" class="btn btn-back">返回</a>
                         <button class="btn btn-confirm">確認</button>
                     </div>
                 </div>
             </div>
 
-        </div>
-        <div class="tab-pane fade content" id="profile" role="tabpanel">
-            456
-        </div>
+
 
         </div>
-        </div>
-        </div>
+
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"

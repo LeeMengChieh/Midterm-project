@@ -71,6 +71,7 @@ body {
 }
 
 .dropdown-menu.show {
+    z-index: 1300;
     background-color: #333;
     width: 100%;
     margin-top: 1px;
@@ -479,6 +480,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .cell-unbook {
     border-bottom: 1px dashed #9AF2E6;
     border-top: 1px dashed #9AF2E6;
+    border-left: 1px solid #9af2e649;
+    border-right: 1px solid #9af2e649;
 }
 
 .booked-privacy {
@@ -559,6 +562,20 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     cursor: pointer;
 }
 
+.join:hover {
+    background-color: #ffffff;
+    color: #5BBEB1;
+    border: 1px solid #5BBEB1;
+
+}
+
+.join:focus:active,
+.join:active {
+    background-color: #ffffff;
+    color: #5BBEB1;
+    border: 1px solid #5BBEB1;
+}
+
 .back {
     display: block;
     margin: auto;
@@ -582,6 +599,13 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .back:hover {
+    background: #EE96FF;
+    color: #fff;
+    text-decoration: none;
+}
+
+#shedule .Back .back:active,
+#shedule .Back .back:focus:active {
     background: #EE96FF;
     color: #fff;
     text-decoration: none;
@@ -715,4 +739,22 @@ input[type="date"]::-webkit-calendar-picker-indicator {
         background-color: #fff;
         overflow-x: hidden;
     }
+
+    .time-slot {
+        font-size: 16px;
+    }
+
+    .name {
+        font-size: 16px;
+    }
+
+    .public {
+        font-size: 16px;
+    }
+
+    .privacy {
+        font-size: 16px;
+
+    }
+
 }
