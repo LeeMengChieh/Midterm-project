@@ -389,7 +389,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .sidebar {
     gap: 8px;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     width: 140px;
@@ -399,7 +399,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 .right-area {
-    margin-left: 140px;
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -417,9 +416,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     height: 94px;
     font-family: "noto sans";
     background-color: #fff;
-    padding: 16px 10px;
     white-space: nowrap;
-    padding: 12px;
     line-height: 1.4;
     font-weight: bold;
     text-align: left;
@@ -490,6 +487,8 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     border-top: 1px dashed #9AF2E6;
     border-left: 1px solid #9af2e649;
     border-right: 1px solid #9af2e649;
+    cursor: pointer;
+
 }
 
 .booked-privacy {
