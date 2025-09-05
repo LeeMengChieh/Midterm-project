@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>無縫走馬燈</title>
+  <style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: -1;
+}
+
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #68e6f9, #51dcff, #74cbff, #b3b4ff, #ee96ff);
+  z-index: 1;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee img {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
+  </style>
+</head>
+<body>
+    <div class="background">
+    <div class="gradient-bg"></div>         <!-- 最底層：彩色漸層 -->
+    <div class="marquee">
+      <img src="./img/backgroundimg.png" alt="bg">
+      <img src="./img/backgroundimg.png" alt="bg">
+    </div>
+    <div class="overlay"></div>             <!-- 最上層：黑色透明遮罩 -->
+  </div>
+
+  <script>
+  function load() {
+    const marquee = document.querySelector('.marquee');
+    let left = 0;
+    let timer;
+
+    const firstImg = marquee.querySelector('img');
+    firstImg.onload = () => {
+      startScroll();
+    };
+    if (firstImg.complete) {
+      startScroll();
+    }
+
+    function startScroll() {
+      function getImgWidth() {
+        return marquee.querySelector('img').clientWidth;
+      }
+
+      function move() {
+        clearInterval(timer);
+
+        const imgWidth = getImgWidth();
+        const duration = 20000;
+        const interval = 20;
+        const step = imgWidth / (duration / interval);
+
+        timer = setInterval(() => {
+          left -= step;
+
+          if (left <= -imgWidth) {
+            left = 0;
+          }
+
+          marquee.style.left = `${left}px`;
+        }, interval);
+      }
+
+      move();
+
+      window.addEventListener('resize', () => {
+        left = 0;
+        marquee.style.left = '0px';
+        move();
+      });
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', load);
+</script>
+
+</body>
+</html>

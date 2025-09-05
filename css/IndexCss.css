@@ -20,7 +20,9 @@ body {
 }
 
 /* ==========================HEADER==================================================== */
-
+.background{
+    display: none;
+}
 .header {
     background-color: #333;
     width: 100%;
@@ -341,24 +343,59 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
 
 @media screen and (min-width: 767px) {
+    html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+}
+
+.background {
+    display:block;
+ position: fixed; /* 固定在螢幕上，不佔後續元素空間 */
+  top: 86px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  z-index: -10;  
+  overflow: hidden;
+}
+
+.gradient-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #68e6f9, #51dcff, #74cbff, #b3b4ff, #ee96ff);
+  z-index: 1;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  height: 100%;
+  z-index: 2;
+}
+
+.marquee img {
+  height: 100%;
+  width: auto;
+  flex-shrink: 0;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+}
     body {
         min-height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../img/backgroundimg.png'),
-            linear-gradient(to bottom, #68e6f9, #51dcff, #74cbff, #b3b4ff, #ee96ff);
-        background-repeat: no-repeat, repeat-x, no-repeat;
-        background-size: cover, 200%, cover;
-        background-position: center center, 0 center, center center;
-        animation: bg-move 20s linear infinite;
-    }
-
-    @keyframes bg-move {
-        from {
-            background-position: center center, 0 center, center center;
-        }
-
-        to {
-            background-position: center center, -1000px center, center center;
-        }
+        background:linear-gradient(to bottom, #68e6f9, #51dcff, #74cbff, #b3b4ff, #ee96ff);
+        background-repeat: no-repeat;
+        background-size:cover;
+        background-position: center center
     }
 
     .menu-icon {
