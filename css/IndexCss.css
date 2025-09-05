@@ -353,7 +353,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 .background {
     display:block;
  position: fixed; /* 固定在螢幕上，不佔後續元素空間 */
-  top: 86px;
+  top: 56px;
   left: 0;
   width: 100%;
   height: 100%;

@@ -20,7 +20,7 @@
           function move() {
             clearInterval(timer);
             const imgWidth = getImgWidth();
-            const duration = 20000; // 20 秒
+            const duration = 30000; 
             const interval = 20;
             const step = imgWidth / (duration / interval);
 
