@@ -223,6 +223,7 @@ body {
 }
 
 #Search .nav-tabs {
+                        border-right:2px solid #EE96FF ;
     display: flex;
     background: #fddde7;
     overflow: hidden;
@@ -255,6 +256,8 @@ body {
     background: white;
     padding: 24px 20px;
     margin-top: -6px;
+            border-bottom:4px solid #EE96FF ;
+                    border-right:2px solid #EE96FF ;
 }
 
 #myTabContent {
